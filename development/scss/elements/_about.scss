@@ -1,0 +1,37 @@
+@import '../settings/colors';
+@import '../settings/fonts';
+@import '../elements/base';
+
+.author__section {
+  display: flex;
+
+
+  background-color: $color-background;
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 80px;
+    margin-top: 80px;
+
+    img {
+      width: 500px;
+      height: auto;
+    }
+
+    .author-info {
+      width: 700px;
+      font-size: $font-size-default;
+      font-family: $font-open-sans;
+      flex-direction: column;
+      color:$color-header;
+
+      h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+    }
+  }
+
+}

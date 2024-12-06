@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Zaplanuj Jedzonko</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:300,400,700,800&display=swap&subset=latin-ext"
+          rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./scss/main.scss"/>
+</head>
+<body>
+
+
+<header class="app__header">
+    <div class="logo">
+        <h1>Zaplanuj<span>Jedzonko</span></h1>
+    </div>
+</header>
+
+<div class="app__body">
+    <nav class="navbar">
+        <ul class="navbar__links">
+            <li class="navbar__element"><a href="#" class="navbar__link">Pulpit</a></li>
+            <li class="navbar__element"><a href="recipes.html" class="navbar__link">Przepisy</a></li>
+            <li class="navbar__element"><a href="#" class="navbar__link">Plany</a></li>
+        </ul>
+    </nav>
+
+    <main class="app__main">
+        <div class="form__background">
+            <div class="content">
+
+                <nav class="navigation container">
+                    <div class="edit__recipe">Edycja przepisu</div>
+                    <button class="btn">Zapisz i zamknij</button>
+                </nav>
+
+                <div class="new__recipe container">
+                    <div class="form__recipe__name">
+                        <h3>Nazwa przepisu</h3>
+                        <label class="form-label" for="name"></label>
+                        <input class="form-input form_all" type="text" name="name" id="name"
+                               placeholder="wpisz nazwę przepisu">
+                    </div>
+
+                    <div class="form__description">
+                        <h3>Opis przepisu</h3>
+                        <label class="form-label" for="description"></label>
+                        <textarea placeholder="opisz przepis" id="description" name="description" rows="4" cols="50"
+                                  class="form_all"></textarea>
+                    </div>
+                </div>
+
+                <div class="more__info container">
+                    <div class="instruction">
+                        <h3 class="info__header">INSTRUKCJE</h3>
+                        <div class="form__info">
+                            <label class="form-label" for="info"></label>
+                            <textarea placeholder="wpisz instrukcje" id="info" name="description" rows="4" cols="50"
+                                      class="form_all"></textarea>
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="ingredients">
+                        <h3 class="ingredients__header">SKŁADNIKI</h3>
+                        <div class="form__ingredients">
+                            <label class="form-label" for="ingredients"></label>
+                            <input class="form-input form_all" type="text" name="ingredients" id="ingredients"
+                                   placeholder="wpisz nazwę przepisu">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="lists container">
+
+                    <div class="ordered__list list_style">
+                        <ol id="instruction-list">
+
+                        </ol>
+
+                    </div>
+
+                    <div class="unordered__list list_style">
+                        <ul id="ingredients-list">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+</div>
+
+<script src="./js/app.js"></script>
+</body>
+</html>

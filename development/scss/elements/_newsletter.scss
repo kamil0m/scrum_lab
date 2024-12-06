@@ -1,0 +1,37 @@
+@use '../settings/colors';
+@use '../settings/fonts';
+@use '../settings/mixins';
+
+.newsletter {
+  background-color: colors.$color-navigation;
+  height: 140px;
+
+  .newsletter__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.newsletter__slogan {
+  font-family: fonts.$font-open-sans;
+  font-size: 45px;
+  font-weight: 400;
+  color: colors.$color-white;
+}
+
+.newsletter__form {
+  display: flex;
+  height: 50px;
+
+  .newsletter__email {
+    width: 300px;
+  }
+
+  .newsletter__button {
+    @include mixins.button {
+      padding: 0 60px;
+      font-size: 24px;
+    }
+  }
+}

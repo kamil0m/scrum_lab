@@ -1,0 +1,40 @@
+@use '../settings/colors';
+@use '../settings/fonts';
+@use '../elements/base';
+
+.header {
+  background-color: colors.$color-header;
+  display: flex;
+
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    .links {
+      display: flex;
+
+      .link {
+        padding: 0 50px;
+        text-transform: uppercase;
+        font-family: fonts.$font-open-sans;
+        color: colors.$color-background;
+
+        &:hover {
+          color: colors.$color-logo;
+        }
+
+      }
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
