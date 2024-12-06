@@ -1,0 +1,12 @@
+@use '../settings/colors';
+@use '../settings/fonts';
+
+@mixin button() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: colors.$color-accent;
+  font-family: fonts.$font-open-sans;
+  color: colors.$color-white;
+  @content;
+}
