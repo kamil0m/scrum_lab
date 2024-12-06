@@ -1,0 +1,930 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.15;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  margin: .67em 0;
+  font-size: 2em;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: #0000;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+img {
+  border-style: none;
+}
+
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+[type="button"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+[type="reset"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring {
+  outline: 1px dotted buttontext;
+}
+
+[type="button"]:-moz-focusring {
+  outline: 1px dotted buttontext;
+}
+
+[type="reset"]:-moz-focusring {
+  outline: 1px dotted buttontext;
+}
+
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted buttontext;
+}
+
+fieldset {
+  padding: .35em .75em .625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  white-space: normal;
+  max-width: 100%;
+  padding: 0;
+  display: table;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"], [type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button {
+  height: auto;
+}
+
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template, [hidden] {
+  display: none;
+}
+
+.header {
+  background-color: #4a4a49;
+  display: flex;
+}
+
+.header .header__container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  display: flex;
+}
+
+.header .header__container .links {
+  display: flex;
+}
+
+.header .header__container .links .link {
+  text-transform: uppercase;
+  color: #fffffa;
+  padding: 0 50px;
+  font-family: Open Sans, sans-serif;
+}
+
+.header .header__container .links .link:hover {
+  color: #e58a20;
+}
+
+.newsletter {
+  background-color: #5b605f;
+  height: 140px;
+}
+
+.newsletter .newsletter__container {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.newsletter__slogan {
+  color: #fff;
+  font-family: Open Sans, sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+}
+
+.newsletter__form {
+  height: 50px;
+  display: flex;
+}
+
+.newsletter__form .newsletter__email {
+  width: 300px;
+}
+
+.newsletter__form .newsletter__button {
+  color: #fff;
+  background-color: #f60;
+  justify-content: center;
+  align-items: center;
+  padding: 0 60px;
+  font-family: Open Sans, sans-serif;
+  font-size: 24px;
+  display: flex;
+}
+
+.carousel__container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 600px;
+  margin: 0;
+  padding: 0;
+  font-family: Open Sans, sans-serif;
+  overflow-x: hidden;
+}
+
+.wrap {
+  position: relative;
+}
+
+.slide {
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 85%;
+  height: 600px;
+  margin: 0 auto;
+  display: none;
+  position: relative;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide__content {
+  text-align: center;
+  color: #000;
+  z-index: 1;
+  font-family: sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slide__content:after {
+  content: "";
+  filter: blur(5px);
+  z-index: -1;
+  background-color: #fff6;
+  border-radius: 40px;
+  width: 100%;
+  height: 100%;
+  padding: 15px 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slide__content h2 {
+  padding-bottom: 30px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.slide__content p {
+  font-size: 20px;
+}
+
+.slide1 {
+  background-image: url("https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg?w=826&t=st=1701589334~exp=1701589934~hmac=5ecf140022e81d2fb66b3ee10f6106ea5f777b9ff052d59a6272a84d10446dfa");
+}
+
+.slide2 {
+  background-image: url("https://img.freepik.com/free-photo/top-view-table-full-delicious-food-arrangement_23-2149141328.jpg?w=826&t=st=1701589361~exp=1701589961~hmac=daf5bfc0e2d8d4b57ed0f715a24eaf243c9766aa840a145d6f3b2dac6e8b6289");
+}
+
+.slide3 {
+  background-image: url("https://img.freepik.com/free-photo/view-delicious-food-assortment_23-2149598944.jpg?t=st=1701589334~exp=1701589934~hmac=d66c010cb6c4e08ee4aa688c1e570d29639a6de290127b2864690eb67404e051");
+}
+
+#leftArrow, #rightArrow {
+  cursor: pointer;
+  color: #4a4a4980;
+  font-size: 40px;
+  position: absolute;
+  top: 45%;
+}
+
+#rightArrow {
+  right: 60px;
+}
+
+#rightArrow:hover {
+  color: #5b605f;
+}
+
+#leftArrow {
+  left: 60px;
+}
+
+#leftArrow:hover {
+  color: #5b605f;
+}
+
+.cta {
+  color: #fffffa;
+  background-color: #5b605f;
+  padding: 30px 50px;
+}
+
+.cta .cta__container {
+  justify-content: space-between;
+  align-items: center;
+  min-height: 200px;
+  font-family: Open sans, sans-serif;
+  display: flex;
+}
+
+.cta h3 {
+  padding-bottom: 16px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.cta p {
+  font-size: 16px;
+}
+
+.cta .cta-btn {
+  background-color: #f60;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 600;
+  line-height: 16px;
+  text-decoration: none;
+  display: inline-flex;
+}
+
+.footer__container {
+  color: #fffffa;
+  background-color: #5b605f;
+  width: 100%;
+  font-family: Open Sans, sans-serif;
+}
+
+.footer__container h2 {
+  margin: 8px 0;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.footer__container .info {
+  justify-content: space-around;
+  padding: 30px 50px;
+  display: flex;
+}
+
+.footer__container .info .first, .footer__container .info .second, .footer__container .info .newsletter {
+  width: 33.33%;
+  font-size: 24px;
+}
+
+.footer__container .info .second, .footer__container .info .newsletter {
+  margin-left: 128px;
+}
+
+.footer__container .info li {
+  margin-left: 0;
+  padding-left: 0;
+  line-height: 32px;
+}
+
+.footer__container .info ul {
+  padding-left: 24px;
+}
+
+.footer__container .info input {
+  width: 56%;
+  height: 40px;
+  font-size: 16px;
+}
+
+.footer__container .info button {
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  background: #f60;
+  border: none;
+  width: 90px;
+  height: 40px;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .25s ease-in-out, transform .15s;
+  display: inline-block;
+}
+
+.footer__container .socialMedia {
+  margin-top: 32px;
+  margin-left: 16px;
+  font-size: 40px;
+}
+
+.footer__container .socialMedia i {
+  margin-right: 16px;
+}
+
+.footer__container .copyright {
+  text-align: center;
+  background-color: #4a4a49;
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-size: 24px;
+}
+
+.footer__container .copyright span {
+  color: #e58a20;
+}
+
+.features {
+  background-color: #fffffa;
+}
+
+.features .card__container {
+  text-align: center;
+  flex-direction: row;
+  display: flex;
+}
+
+.features .card__container .card {
+  color: #4a4a49;
+  padding: 40px 30px;
+  font-family: Open Sans, sans-serif;
+}
+
+.features .card__container .card i {
+  text-align: center;
+  color: #4a4a49;
+  flex-direction: column;
+  font-family: "Font Awesome 5 Free";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+}
+
+.features h3 {
+  font-size: 20px;
+}
+
+.author__section {
+  background-color: #fffffa;
+  display: flex;
+}
+
+.author__section .container {
+  justify-content: space-around;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: flex;
+}
+
+.author__section .container img {
+  width: 500px;
+  height: auto;
+}
+
+.author__section .container .author-info {
+  color: #4a4a49;
+  flex-direction: column;
+  width: 700px;
+  font-family: Open Sans, sans-serif;
+  font-size: 14px;
+}
+
+.author__section .container .author-info h3 {
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.logo {
+  font-family: Charmonman, cursive;
+}
+
+.logo h1 {
+  color: #fff;
+}
+
+.logo span {
+  color: #e58a20;
+  margin-left: 10px;
+}
+
+.app__body .app__main {
+  width: 100%;
+}
+
+.app__body .navbar {
+  background-color: #5b605f;
+  width: 300px;
+  height: 100vh;
+}
+
+.app__body .navbar .navbar__links {
+  list-style-type: none;
+}
+
+.app__body .navbar .navbar__links .navbar__element {
+  border-left: 5px solid #0000;
+  width: 100%;
+  padding: 30px 1.5rem;
+}
+
+.app__body .navbar .navbar__links .navbar__element:hover {
+  border-color: #f60;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.app__body .navbar .navbar__links .navbar__element:hover:after {
+  content: "";
+  border: 3px solid #f60;
+  border-color: #f60 #f60 #0000 #0000;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+}
+
+.app__body .navbar .navbar__links .navbar__element .navbar__link {
+  color: #fff;
+  margin: 0;
+  font-family: Open Sans, sans-serif;
+  font-size: 30px;
+}
+
+.form__background {
+  width: 100%;
+  height: 100vh;
+  padding: 50px;
+}
+
+.form__background .content {
+  background-color: #fffffa;
+  border: 1px dashed #a1a194;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.form__background h2 {
+  color: #5b605f;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  font-family: Open Sans, sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.form__background .welcome__text {
+  color: #5b605f;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: Open Sans, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.form__background .form__name {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.form__background .form__name input {
+  width: 300px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.form__background .btn {
+  color: #fff;
+  background-color: #f60;
+  border: none;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  width: 200px;
+  margin-bottom: 20px;
+  padding: 20px 30px;
+  font-family: Open Sans, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+}
+
+.form__background .welcome__info {
+  color: #5b605f;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: Open Sans, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.app__header {
+  background-color: #4a4a49;
+  border: 1px solid #343433;
+  padding: .5rem 1rem;
+  display: block;
+}
+
+.app__body {
+  background-image: url("background.2a37ab19.png");
+  justify-content: flex-start;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.app__body .app__main {
+  width: 100%;
+  display: flex;
+}
+
+.app__body .app__main .container {
+  margin: 0 40px;
+}
+
+.app__body .app__main .navigation {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+  display: flex;
+}
+
+.app__body .app__main .navigation:after {
+  content: "";
+  background-color: #a1a194;
+  width: 100%;
+  height: 3px;
+  display: block;
+}
+
+.app__body .app__main .navigation .edit__recipe {
+  text-transform: uppercase;
+  color: #f60;
+  margin-top: 17px;
+  font-family: Open Sans, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.app__body .app__main .navigation .btn {
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.app__body .new__recipe {
+  flex-direction: column;
+  display: flex;
+}
+
+.app__body .new__recipe h3 {
+  color: #5b605f;
+  align-self: flex-start;
+  margin-top: 0;
+  font-family: Open Sans, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.app__body .new__recipe .form_all {
+  width: 70%;
+  height: 30px;
+  margin-right: 100px;
+  padding-left: 10px;
+  font-family: Open Sans, sans-serif;
+}
+
+.app__body .new__recipe .form__recipe__name {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+}
+
+.app__body .new__recipe .form__description {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.app__body .new__recipe .form__description textarea {
+  height: 100px;
+  margin-bottom: 80px;
+}
+
+.app__body .more__info {
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+}
+
+.app__body .more__info h3 {
+  color: #5b605f;
+  align-self: flex-start;
+  margin-top: 0;
+  font-family: Open Sans, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.app__body .more__info h3:after {
+  content: "";
+  background-color: #a1a194;
+  width: 100%;
+  height: 3px;
+  margin-top: 10px;
+  display: block;
+}
+
+.app__body .more__info i {
+  text-align: center;
+  color: #fffffa;
+  background-color: #0a910a;
+  border: 5px solid #0a910a;
+  border-radius: 10px;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 5px 5px;
+  padding: 5px;
+  font-family: "Font Awesome 5 Free";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+}
+
+.app__body .more__info .instruction {
+  width: 650px;
+}
+
+.app__body .more__info .instruction .form__info {
+  justify-content: center;
+  display: flex;
+}
+
+.app__body .more__info .instruction .form__info textarea {
+  flex: auto;
+  height: 100px;
+  margin-right: 0;
+  padding-left: 10px;
+  font-family: Open Sans, sans-serif;
+}
+
+.app__body .more__info .ingredients {
+  width: 650px;
+}
+
+.app__body .more__info .ingredients .form__ingredients {
+  justify-content: center;
+  display: flex;
+}
+
+.app__body .more__info .ingredients .form__ingredients input {
+  flex: auto;
+  height: 30px;
+  margin-right: 0;
+  padding-left: 10px;
+  font-family: Open Sans, sans-serif;
+}
+
+.app__body .lists {
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+}
+
+.app__body .lists .list_style {
+  width: 650px;
+  max-height: 300px;
+  font-family: Open Sans, sans-serif;
+  overflow: hidden auto;
+}
+
+.container {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.widgets {
+  background-color: #0000;
+  border: none;
+  display: flex;
+}
+
+.widgets .widgets__add {
+  align-items: center;
+  max-width: 30%;
+  display: flex;
+}
+
+.widgets .widgets__add img {
+  max-width: 100%;
+  padding: 10px 0 10px 10px;
+}
+
+.widgets .widgets__status {
+  flex-direction: column;
+  justify-content: center;
+  max-width: 70%;
+  font-family: Open Sans, sans-serif;
+  font-size: 20px;
+  display: flex;
+}
+
+.widgets .widgets__status div {
+  background-color: #fffffa;
+  border: 1px dashed;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  position: relative;
+}
+
+.widgets .widgets__status div p {
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+.widgets .widgets__status .widget__status-1 {
+  color: #3498db;
+}
+
+.widgets .widgets__status .widget__status-2 {
+  color: #ffb03b;
+}
+
+.widgets .widgets__status .widget__status-3 {
+  color: #468966;
+}
+
+.widgets .widgets__status i {
+  font-family: "Font Awesome 5 Free";
+  font-size: 20px;
+}
+
+.widgets .widgets__status i.fas.fa-times {
+  height: calc(33.33% - 10px);
+  font-size: 20px;
+  line-height: calc(33.33% - 10px);
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+/*# sourceMappingURL=app.7e842bf3.css.map */
